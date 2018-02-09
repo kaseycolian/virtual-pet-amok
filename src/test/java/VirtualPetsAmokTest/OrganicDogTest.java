@@ -29,26 +29,34 @@ public class OrganicDogTest {
 
 	}
 
-	@Test
-	public void shouldHaveBoredomGoDownWhenWalking() {
+	@Test // also testing access to boredomLevel & needToWasteLevel
+	public void shouldEffect2LevelsWhenWalking() {
 		int boredomBefore = underTest.getBoredomLevel();
+		int needToGoBefore = underTest.getNeedToWasteLevel();
 		underTest.goForAWalk();
 		int boredomAfter = underTest.getBoredomLevel();
+		int needToGoAfter = underTest.getNeedToWasteLevel();
 		assertThat(boredomAfter - boredomBefore, is(-5));
+		assertThat(needToGoBefore - needToGoAfter, is(7));
 
-	}
-	
-	@Test
-	public void shouldShowWasteLevel() {
-		int check = underTest.getNeedToWasteLevel();
-		assertEquals(check, 15);
+	}	
+	@Test //also testing access to hungerLevel, thirstLevel, & happyLevel
+	public void shouldEffect4LevelsWithPlay() {
+		int hungerBefore = underTest.getHungerLevel();
+		int thirstBefore = underTest.getThirstLevel();
+		int boredomBefore = underTest.getBoredomLevel();
+		int happyBefore = underTest.getHappyLevel();
+
+		underTest.playWithPet();
 		
-	}
-	@Test
-	public void shouldHaveNeedToWasteGoDownWhileWalking(){
-	int needToGoBefore = underTest.getNeedToWasteLevel();
-	underTest.goForAWalk();
-	int needToGoAfter = underTest.getNeedToWasteLevel();
-	assertThat(needToGoBefore - needToGoAfter, is(7));
+		int hungerAfter = underTest.getHungerLevel();
+		int thirstAfter = underTest.getThirstLevel();
+		int boredomAfter = underTest.getBoredomLevel();
+		int happyAfter = underTest.getHappyLevel();
+		
+		assertThat(boredomBefore - boredomAfter, is(10));
+		assertThat(hungerAfter - hungerBefore, is (3));
+		assertThat(thirstAfter - thirstBefore, is (3));
+		assertThat(happyBefore - happyAfter, is (10));
 	}
 }

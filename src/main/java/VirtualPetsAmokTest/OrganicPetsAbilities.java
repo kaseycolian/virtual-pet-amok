@@ -8,8 +8,6 @@ public interface OrganicPetsAbilities {
 
 	int getNeedToWasteLevel();
 
-	int getSoiledAreaLevel();
-
 	void feedOne();
 
 	void waterOne();
@@ -18,6 +16,8 @@ public interface OrganicPetsAbilities {
 
 	void tickEffectOne();
 
+//	void playWithOrganicPet();
+	
 	String getAllLevelsForIndividual();
 
 }

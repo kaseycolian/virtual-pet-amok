@@ -9,6 +9,7 @@ public abstract class Pets {
 	static final int DEFAULT_HAPPYLEVEL = 50;
 	static final int DEFAULT_HEALTHLEVEL = 80;
 	static final int DEFAULT_MAGICLEVEL = 50;
+
 	protected int healthLevel = DEFAULT_HEALTHLEVEL;
 	protected int happyLevel = DEFAULT_HAPPYLEVEL;
 	protected int magicLevel = DEFAULT_MAGICLEVEL;
@@ -46,6 +47,22 @@ public abstract class Pets {
 
 	public int getHealthLevel() {
 		return healthLevel;
+	}
+
+	// will need to override to customize for organic pets and robot pets.
+	public void playWithPet() {
+		boredomLevel = boredomLevel - 10;
+		// hungerLevel = hungerLevel + 3;
+		// thirstLevel = thirstLevel + 3;
+		happyLevel = happyLevel + 10;
+		magicLevel = magicLevel - 5;
+		healthLevel = healthLevel + 8;
+		if (boredomLevel - 10 <= 10) {
+			boredomLevel = 0;
+		}
+		if (happyLevel + 3 > 100) {
+			happyLevel = 100;
+		}
 	}
 
 }

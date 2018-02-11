@@ -1,27 +1,16 @@
 package VirtualPetsAmokTest;
 
-public class OrganicDog implements OrganicPetsAbilities {
+public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 
-	private String microchipNumber;
-	private String nameOfPet;
-	private String typeOfPet;
-	static final int DEFAULT_BOREDOMLEVEL = 10;
 	static final int DEFAULT_NEEDTOWASTELEVEL = 15;
 	static final int DEFAULT_HUNGERLEVEL = 50;
 	static final int DEFAULT_THIRSTLEVEL = 50;
-	static final int DEFAULT_FIRElEVEL = 50;
-	static final int DEFAULT_HAPPYLEVEL = 50;
-	static final int DEFAULT_HEALTHLEVEL = 80;
-	static final int DEFAULT_SOILEDLEVEL = 5;
+	static final int DEFAULT_SOILEDAREALEVEL = 5;
 
-	private int soiledAreaLevel = DEFAULT_SOILEDLEVEL;
-	private int healthLevel = DEFAULT_HEALTHLEVEL;
-	private int happyLevel = DEFAULT_HAPPYLEVEL;
-	private int magicLevel = DEFAULT_FIRElEVEL;
-	private int thirstLevel = DEFAULT_THIRSTLEVEL;
-	private int hungerLevel = DEFAULT_HUNGERLEVEL;
-	private int boredomLevel = DEFAULT_BOREDOMLEVEL;
 	private int needToWasteLevel = DEFAULT_NEEDTOWASTELEVEL;
+	private int hungerLevel = DEFAULT_HUNGERLEVEL;
+	private int thirstLevel = DEFAULT_THIRSTLEVEL;
+	private int soiledAreaLevel = DEFAULT_SOILEDAREALEVEL;
 
 	public OrganicDog(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
@@ -29,75 +18,87 @@ public class OrganicDog implements OrganicPetsAbilities {
 		this.typeOfPet = typeOfPet;
 	}
 
-	public String getPetName() {
-
-		return nameOfPet;
+	// soiledAreaLevel is unique for this animal type. (Individual cages, not
+	// communal litter box);
+	public int getSoiledAreaLevel() {
+		return soiledAreaLevel;
 	}
 
-	public String getTypeOfPet() {
 
-		return typeOfPet;
+	@Override
+	public void goForAWalk() {
+		boredomLevel = boredomLevel - 7;
+		happyLevel = happyLevel + 10;
+		needToWasteLevel = needToWasteLevel - 10;
+		healthLevel = healthLevel + 8;
 	}
 
-	public String getMicrochipNumber() {
-		return microchipNumber;
-	}
-
-	public int getBoredomLevel() {
-		return boredomLevel;
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getHungerLevel()
-	 */
 	@Override
 	public int getHungerLevel() {
 		return hungerLevel;
 	}
 
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getThirstLevel()
-	 */
 	@Override
 	public int getThirstLevel() {
 		return thirstLevel;
 	}
 
-	public int getMagicLevel() {
-		return magicLevel;
-	}
-
-	public int getHappyLevel() {
-		return happyLevel;
-	}
-
-	public int getHealthLevel() {
-		return healthLevel;
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getNeedToWasteLevel()
-	 */
 	@Override
 	public int getNeedToWasteLevel() {
 		return needToWasteLevel;
 	}
 
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getSoiledAreaLevel()
-	 */
 	@Override
-	public int getSoiledAreaLevel() {
-		return soiledAreaLevel;
+	public void feedOne() {
+		hungerLevel = hungerLevel - 10;
+		thirstLevel = thirstLevel + 3;
+		magicLevel = magicLevel + 3;
+		healthLevel = healthLevel + 5;
+		if (hungerLevel - 10 <= 0) {
+			hungerLevel = 0;
+		}
 	}
 
-	public void goForAWalk() { // will be put into interface
-		boredomLevel = boredomLevel - 7;
-		happyLevel = happyLevel + 10;
-		needToWasteLevel = needToWasteLevel - 5;
-		healthLevel = healthLevel + 8;
+	@Override
+	public void waterOne() {
+		thirstLevel = thirstLevel - 10;
+		hungerLevel = hungerLevel + 3;
+		magicLevel = magicLevel + 3;
+		healthLevel = healthLevel + 3;
+		if (thirstLevel - 10 <= 0) {
+			thirstLevel = 0;
+		}
 	}
 
+	@Override
+	public void fireOne() {
+		magicLevel = magicLevel - 10;
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		healthLevel = healthLevel + 5;
+		if (magicLevel - 10 <= 0) {
+			magicLevel = 0;
+		}
+	}
+
+	@Override
+	public void tickEffectOne() {
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		magicLevel = magicLevel + 3;
+		boredomLevel = boredomLevel + 3;
+		healthLevel = healthLevel - 3;
+	}
+
+	@Override
+	public String getAllLevelsForIndividual() {
+		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
+				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
+				+ boredomLevel + "\nBelly Fullness Level: " + needToWasteLevel + "\n Cage Dirtiness: "
+				+ soiledAreaLevel;
+	}
+
+	@Override
 	public void playWithPet() {
 		boredomLevel = boredomLevel - 10;
 		hungerLevel = hungerLevel + 3;
@@ -111,70 +112,5 @@ public class OrganicDog implements OrganicPetsAbilities {
 		if (happyLevel + 3 > 100) {
 			happyLevel = 100;
 		}
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#feedOne()
-	 */
-	@Override
-	public void feedOne() {
-		hungerLevel = hungerLevel - 10;
-		thirstLevel = thirstLevel + 3;
-		magicLevel = magicLevel + 3;
-		healthLevel = healthLevel + 5;
-		if (hungerLevel - 10 <= 0) {
-			hungerLevel = 0;
-		}
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#waterOne()
-	 */
-	@Override
-	public void waterOne() {
-		thirstLevel = thirstLevel - 10;
-		hungerLevel = hungerLevel + 3;
-		magicLevel = magicLevel + 3;
-		healthLevel = healthLevel + 3;
-		if (thirstLevel - 10 <= 0) {
-			thirstLevel = 0;
-		}
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#fireOne()
-	 */
-	@Override
-	public void fireOne() {
-		magicLevel = magicLevel - 10;
-		hungerLevel = hungerLevel + 3;
-		thirstLevel = thirstLevel + 3;
-		healthLevel = healthLevel + 5;
-		if (magicLevel - 10 <= 0) {
-			magicLevel = 0;
-		}
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#tickEffectOne()
-	 */
-	@Override
-	public void tickEffectOne() {
-		hungerLevel = hungerLevel + 3;
-		thirstLevel = thirstLevel + 3;
-		magicLevel = magicLevel + 3;
-		boredomLevel = boredomLevel + 3;
-		healthLevel = healthLevel - 3;
-	}
-
-	/* (non-Javadoc)
-	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getAllLevelsForIndividual()
-	 */
-	@Override
-	public String getAllLevelsForIndividual() {
-		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
-				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
-				+ boredomLevel + "\nBelly Fullness Level: " + needToWasteLevel + "\n Cage Dirtiness: "
-				+ soiledAreaLevel;
 	}
 }

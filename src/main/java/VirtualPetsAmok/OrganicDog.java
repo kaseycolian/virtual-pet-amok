@@ -24,13 +24,6 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		return soiledAreaLevel;
 	}
 
-	public void cleanCage() {
-		soiledAreaLevel = soiledAreaLevel - 15;
-		if (soiledAreaLevel < 0) {
-			soiledAreaLevel = 0;
-		}
-	}
-
 	public int getNeedToWasteLevel() {
 		return needToWasteLevel;
 	}
@@ -43,6 +36,13 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 	@Override
 	public int getThirstLevel() {
 		return thirstLevel;
+	}
+
+	public void cleanCage() {
+		soiledAreaLevel = soiledAreaLevel - 15;
+		if (soiledAreaLevel < 0) {
+			soiledAreaLevel = 0;
+		}
 	}
 
 	@Override

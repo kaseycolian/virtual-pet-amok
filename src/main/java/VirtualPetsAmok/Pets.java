@@ -73,4 +73,24 @@ public abstract class Pets {
 		boredomLevel = boredomLevel + 3;
 
 	}
+
+	public void fireOne() {
+		magicLevel = magicLevel - 10;
+		happyLevel = happyLevel + 5;
+		boredomLevel = boredomLevel - 5;
+		healthLevel = healthLevel + 5;
+		if (healthLevel > 100) {
+			healthLevel = 100;
+		}
+		if (happyLevel > 100) {
+			happyLevel = 100;
+		}
+		if (boredomLevel < 0) {
+			boredomLevel = 0;
+		}
+		if (magicLevel<0) {
+			magicLevel = 0;
+		}
+	}
+
 }

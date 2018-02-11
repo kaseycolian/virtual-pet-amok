@@ -11,11 +11,11 @@ public class RoboDog extends Pets implements Walkable {
 		return isOilable;
 	}
 
-	public RoboDog(String microchipNumber, String nameOfPet, String typeOfPet, Boolean isOilable) {
+	public RoboDog(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-		this.isOilable = isOilable;
+//		this.isOilable = isOilable;
 
 	}
 

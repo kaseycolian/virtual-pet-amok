@@ -34,7 +34,7 @@ public class OrganicDogTest {
 		int cageBefore = underTest.getSoiledAreaLevel();
 		underTest.cleanCage();
 		int cageAfter = underTest.getSoiledAreaLevel();
-		assertEquals(cageBefore - cageAfter, 15);
+		assertEquals(cageBefore - cageAfter, 5);
 	}
 
 	@Test // also testing access to boredomLevel & needToWasteLevel
@@ -49,9 +49,9 @@ public class OrganicDogTest {
 		int needToGoAfter = underTest.getNeedToWasteLevel();
 		int healthAfter = underTest.getHealthLevel();
 
-		assertThat(boredomBefore - boredomAfter, is(7));
-		assertThat(needToGoBefore - needToGoAfter, is(10));
-		assertThat(healthAfter - healthBefore, is(8));
+		assertThat(boredomBefore - boredomAfter, is(5));
+		assertThat(needToGoBefore - needToGoAfter, is(15));
+		assertThat(healthAfter - healthBefore, is(5));
 
 	}
 
@@ -62,9 +62,7 @@ public class OrganicDogTest {
 		int boredomBefore = underTest.getBoredomLevel();
 		int happyBefore = underTest.getHappyLevel();
 		int healthBefore = underTest.getHealthLevel();
-
 		underTest.playWithPet();
-
 		int hungerAfter = underTest.getHungerLevel();
 		int thirstAfter = underTest.getThirstLevel();
 		int boredomAfter = underTest.getBoredomLevel();

@@ -23,18 +23,16 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 	public int getSoiledAreaLevel() {
 		return soiledAreaLevel;
 	}
-	
+
 	public void cleanCage() {
 		soiledAreaLevel = soiledAreaLevel - 15;
+		if (soiledAreaLevel < 0) {
+			soiledAreaLevel = 0;
+		}
 	}
 
-
-	@Override
-	public void goForAWalk() {
-		boredomLevel = boredomLevel - 7;
-		happyLevel = happyLevel + 10;
-		needToWasteLevel = needToWasteLevel - 10;
-		healthLevel = healthLevel + 8;
+	public int getNeedToWasteLevel() {
+		return needToWasteLevel;
 	}
 
 	@Override
@@ -48,8 +46,23 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 	}
 
 	@Override
-	public int getNeedToWasteLevel() {
-		return needToWasteLevel;
+	public void goForAWalk() {
+		boredomLevel = boredomLevel - 5;
+		happyLevel = happyLevel + 5;
+		needToWasteLevel = needToWasteLevel - 50;
+		healthLevel = healthLevel + 5;
+		if (happyLevel > 100) {
+			happyLevel = 100;
+		}
+		if (needToWasteLevel < 0) {
+			needToWasteLevel = 0;
+		}
+		if (healthLevel > 100) {
+			healthLevel = 100;
+		}
+		if (boredomLevel < 0) {
+			boredomLevel = 0;
+		}
 	}
 
 	@Override
@@ -58,8 +71,15 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		thirstLevel = thirstLevel + 3;
 		magicLevel = magicLevel + 3;
 		healthLevel = healthLevel + 5;
-		if (hungerLevel - 10 <= 0) {
+		happyLevel = happyLevel + 3;
+		if (hungerLevel < 0) {
 			hungerLevel = 0;
+		}
+		if (happyLevel > 100) {
+			happyLevel = 100;
+		}
+		if (healthLevel > 100) {
+			healthLevel = 100;
 		}
 	}
 
@@ -69,8 +89,15 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		hungerLevel = hungerLevel + 3;
 		magicLevel = magicLevel + 3;
 		healthLevel = healthLevel + 3;
-		if (thirstLevel - 10 <= 0) {
+		happyLevel = happyLevel + 4;
+		if (thirstLevel <= 0) {
 			thirstLevel = 0;
+		}
+		if (happyLevel > 100) {
+			happyLevel = 100;
+		}
+		if (healthLevel > 100) {
+			healthLevel = 100;
 		}
 	}
 
@@ -80,8 +107,11 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		hungerLevel = hungerLevel + 3;
 		thirstLevel = thirstLevel + 3;
 		healthLevel = healthLevel + 5;
-		if (magicLevel - 10 <= 0) {
+		if (magicLevel < 0) {
 			magicLevel = 0;
+		}
+		if (healthLevel > 100) {
+			healthLevel = 100;
 		}
 	}
 
@@ -104,13 +134,14 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		happyLevel = happyLevel + 10;
 		magicLevel = magicLevel - 5;
 		healthLevel = healthLevel + 8;
-		if (boredomLevel - 10 <= 10) {
+		if (boredomLevel < 0) {
 			boredomLevel = 0;
 		}
-		if (happyLevel + 3 > 100) {
+		if (happyLevel > 100) {
 			happyLevel = 100;
 		}
 	}
+
 	@Override
 	public String getAllLevelsForIndividual() {
 		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "

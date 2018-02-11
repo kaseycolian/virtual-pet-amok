@@ -1,15 +1,15 @@
 package VirtualPetsAmokTest;
 
 public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
-//
-//	static final int DEFAULT_NEEDTOWASTELEVEL = 15;
-//	static final int DEFAULT_HUNGERLEVEL = 50;
-//	static final int DEFAULT_THIRSTLEVEL = 50;
+
+	static final int DEFAULT_NEEDTOWASTELEVEL = 15;
+	static final int DEFAULT_HUNGERLEVEL = 50;
+	static final int DEFAULT_THIRSTLEVEL = 50;
 	static final int DEFAULT_SOILEDAREALEVEL = 5;
-//
-//	private int needToWasteLevel = DEFAULT_NEEDTOWASTELEVEL;
-//	private int hungerLevel = DEFAULT_HUNGERLEVEL;
-//	private int thirstLevel = DEFAULT_THIRSTLEVEL;
+
+	private int needToWasteLevel = DEFAULT_NEEDTOWASTELEVEL;
+	private int hungerLevel = DEFAULT_HUNGERLEVEL;
+	private int thirstLevel = DEFAULT_THIRSTLEVEL;
 	private int soiledAreaLevel = DEFAULT_SOILEDAREALEVEL;
 
 	public OrganicDog(String microchipNumber, String nameOfPet, String typeOfPet) {

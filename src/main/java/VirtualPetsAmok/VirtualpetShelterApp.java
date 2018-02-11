@@ -76,6 +76,9 @@ public class VirtualpetShelterApp {
 			case "6":
 				lairApp.cleanAllDogCages();
 				break;
+			case "7":
+				lairApp.litterBoxEmpty();
+				break;
 			// case "7":
 			// lairApp.
 			// break;

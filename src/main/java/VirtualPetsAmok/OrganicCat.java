@@ -47,6 +47,17 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 
 	}
 
+	public void makeHappy() {
+		happyLevel = happyLevel + 15;{
+			if (happyLevel>100)
+				happyLevel =100;
+		}
+	}
+
+	public void makeSad() {
+		happyLevel = happyLevel - 10;
+	}
+
 	@Override
 	public void waterOne() {
 		thirstLevel = thirstLevel - 10;
@@ -84,7 +95,7 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 		hungerLevel = hungerLevel + 3;
 		thirstLevel = thirstLevel + 3;
 		magicLevel = magicLevel + 3;
-		boredomLevel = boredomLevel + 3;
+		boredomLevel = boredomLevel + 6;
 		healthLevel = healthLevel - 3;
 		happyLevel = happyLevel - 3;
 	}

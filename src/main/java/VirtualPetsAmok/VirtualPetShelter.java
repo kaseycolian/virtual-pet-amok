@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class VirtualPetShelter {
-	
+
 	static final int DEFAULT_LITTERBOXLEVEL = 5;
 	private int litterBoxLevel = DEFAULT_LITTERBOXLEVEL;
-	
+
 	Map<String, Pets> animals = new HashMap<>();
 	public Set<String> microchipNumber = animals.keySet();
 
@@ -103,9 +103,25 @@ public class VirtualPetShelter {
 	}
 
 	public void tickAll() {
-		for (Pets petToTickOff : animals.values()) {
-			petToTickOff.tickEffectOne();
+		for (Pets pet : animals.values()) {
+			pet.tickEffectOne();
 		}
+		litterBoxLevel = litterBoxLevel + 10;
+		for (Pets pet : animals.values()) {
+			if (litterBoxLevel > 60 && pet instanceof OrganicCat) {
+				((OrganicCat) pet).makeSad();
+			}
+		}
+	}
+
+	public void litterBoxEmpty() {
+		litterBoxLevel = 0;
+		for (Pets pet : animals.values()) {
+			if (pet instanceof OrganicCat) {
+				((OrganicCat) pet).makeHappy();
+			}
+		}
+		System.out.println("Thanks for ");
 	}
 
 	public void fireAll() {
@@ -120,6 +136,9 @@ public class VirtualPetShelter {
 	// }
 
 	public void returnStatusOfAll() {
+		System.out.println();
+		System.out.println("Litter box level is: " + litterBoxLevel);
+		System.out.println();
 		for (Pets petToDisplay : animals.values()) {
 			if (petToDisplay instanceof OrganicDog) {
 				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
@@ -141,9 +160,10 @@ public class VirtualPetShelter {
 			}
 			if (petToDisplay instanceof RoboDog) {
 				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
-						+  "\n\tHealth Level: " + ((RoboDog) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
-								+ ((RoboDog) petToDisplay).getHappyLevel() + "\n\tFire Level: " + petToDisplay.getMagicLevel() + "    | Boredom Level: "
-						+ petToDisplay.getBoredomLevel() + "\n\tOil Level: " + ((RoboDog) petToDisplay).getOilLevel());
+						+ "\n\tHealth Level: " + ((RoboDog) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
+						+ ((RoboDog) petToDisplay).getHappyLevel() + "\n\tFire Level: " + petToDisplay.getMagicLevel()
+						+ "    | Boredom Level: " + petToDisplay.getBoredomLevel() + "\n\tOil Level: "
+						+ ((RoboDog) petToDisplay).getOilLevel());
 			}
 		}
 	}

@@ -49,7 +49,7 @@ public class RoboDog extends Pets implements Walkable {
 		healthLevel = healthLevel - 3;
 		magicLevel = magicLevel + 3;
 		boredomLevel = boredomLevel + 3;
-		oilLevel = oilLevel - 5;
+		oilLevel = oilLevel - 8;
 		happyLevel = happyLevel - 3;
 	}
 

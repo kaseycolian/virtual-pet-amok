@@ -48,7 +48,7 @@ public abstract class Pets {
 	public int getHappyLevel() {
 		return happyLevel;
 	}
-
+	
 	public int getHealthLevel() {
 		return healthLevel;
 	}

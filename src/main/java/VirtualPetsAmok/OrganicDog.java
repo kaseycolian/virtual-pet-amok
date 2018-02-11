@@ -122,8 +122,8 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		magicLevel = magicLevel + 3;
 		boredomLevel = boredomLevel + 3;
 		healthLevel = healthLevel - 3;
-		needToWasteLevel = needToWasteLevel + 3;
-		soiledAreaLevel = soiledAreaLevel + 5;
+		needToWasteLevel = needToWasteLevel + 6;
+		soiledAreaLevel = soiledAreaLevel + 4;
 	}
 
 	@Override

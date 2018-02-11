@@ -30,9 +30,11 @@ public class OrganicDogTest {
 	}
 
 	@Test
-	public void shouldReturnSoilLevelOfCage() {
-		int check = underTest.getSoiledAreaLevel();
-		assertEquals(check, 5);
+	public void shouldCleanCage() {
+		int cageBefore = underTest.getSoiledAreaLevel();
+		underTest.cleanCage();
+		int cageAfter = underTest.getSoiledAreaLevel();
+		assertEquals(cageBefore - cageAfter, 15);
 	}
 
 	@Test // also testing access to boredomLevel & needToWasteLevel
@@ -48,7 +50,7 @@ public class OrganicDogTest {
 		int healthAfter = underTest.getHealthLevel();
 
 		assertThat(boredomBefore - boredomAfter, is(7));
-		assertThat(needToGoBefore - needToGoAfter, is(5));
+		assertThat(needToGoBefore - needToGoAfter, is(10));
 		assertThat(healthAfter - healthBefore, is(8));
 
 	}
@@ -74,5 +76,13 @@ public class OrganicDogTest {
 		assertThat(thirstAfter - thirstBefore, is(3));
 		assertThat(happyAfter - happyBefore, is(10));
 		assertThat(healthAfter - healthBefore, is(8));
+	}
+
+	@Test
+	public void tickShouldIncreaseSoiledArea() {
+		int soiledAreaBefore = underTest.getSoiledAreaLevel();
+		underTest.tickEffectOne();
+		int soiledAreaAfter = underTest.getSoiledAreaLevel();
+		assertThat(soiledAreaAfter - soiledAreaBefore, is(5));
 	}
 }

@@ -52,14 +52,17 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	}
 
 	@Override
-	public void tickEffectOne() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public String getAllLevelsForIndividual() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public void tickEffectOne() {
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
+		magicLevel = magicLevel + 3;
+		boredomLevel = boredomLevel + 3;
+		healthLevel = healthLevel - 3;
 	}
 }

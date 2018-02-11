@@ -14,7 +14,7 @@ public interface OrganicPetsAbilities {
 
 	void fireOne();
 
-	void tickEffectOne();
+//	void tickEffectOne();
 
 	// void playWithOrganicPet(); //added this to Pets abstract class since all pets
 	// can be played with.

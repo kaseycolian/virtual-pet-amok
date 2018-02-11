@@ -27,40 +27,45 @@ public class RoboDogeTest {
 		String check = underTest.getTypeOfPet();
 		assertEquals(check, "BotBot");
 	}
-	
+
 	@Test
 	public void shouldBeOilable() {
 		Boolean isOilable = underTest.getOilableStatus();
-		assertThat(isOilable, is (false));
-	}
-	
-	@Test public void shouldReturnOilLevel() {
-		int check = underTest.getOilLevel();
-		assertThat(check, is(50));
-	}
-	
-	@Test 
-	public void shouldReturnHealthLevel() {
-	int check = underTest.getHealthLevel();
-	assertThat(check, is (80));
-	}
-	
-	@Test
-	public void shouldReturnHappyLevel() {
-		int check = underTest.getHappyLevel();
-		assertThat (check, is (50));
-	}
-	
-	@Test
-	public void shouldReturnBoredeomLevel() {
-		int check = underTest.getBoredomLevel();
-		assertThat (check, is (10));
+		assertThat(isOilable, is(false));
 	}
 
 	@Test
-	public void shouldReturnMagicLevel() {
-		int check = underTest.getMagicLevel();
-		assertThat (check, is (50));
+	public void shouldReturnOilLevel() {
+		int check = underTest.getOilLevel();
+		assertThat(check, is(50));
+	}
+
+	@Test
+	public void shouldReturnHappyLevel() {
+		int check = underTest.getHappyLevel();
+		assertThat(check, is(50));
 	}
 	
+	@Test
+	public void shouldOilPet() {
+		int oilBefore = underTest.getOilLevel();
+		underTest.oilRoboPet();
+		int oilAfter = underTest.getOilLevel();
+		assertThat(oilAfter - oilBefore, is (15));
+	}
+
+	@Test
+	public void shouldEffect3LevelsForTick() {
+		int healthLevelBefore = underTest.getHealthLevel();
+		int magicLevelBefore = underTest.getMagicLevel();
+		int boredomLevelBefore = underTest.getBoredomLevel();
+		underTest.tickEffectOne();
+		int healthAfter = underTest.getHealthLevel();
+		int magicAfter = underTest.getMagicLevel();
+		int boredomAfter = underTest.getBoredomLevel();
+		assertThat(healthLevelBefore - healthAfter, is(3));
+		assertThat(magicAfter - magicLevelBefore, is(3));
+		assertThat(boredomAfter - boredomLevelBefore, is(3));
+	}
+
 }

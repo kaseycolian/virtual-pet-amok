@@ -64,5 +64,11 @@ public abstract class Pets {
 			happyLevel = 100;
 		}
 	}
+	
+	public void tickEffectOne() {
+		healthLevel = healthLevel - 3;
+		magicLevel = magicLevel + 3;
+		boredomLevel = boredomLevel + 3;
 
+}
 }

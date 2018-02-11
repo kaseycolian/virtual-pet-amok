@@ -1,7 +1,7 @@
 package VirtualPetsAmokTest;
 
 public class RoboDog extends Pets implements Walkable {
-
+//has TickForOne inherited, no need to override.
 	static final int DEFAULT_OILLEVEL = 50;
 
 	private int oilLevel = DEFAULT_OILLEVEL;
@@ -22,12 +22,17 @@ public class RoboDog extends Pets implements Walkable {
 	public int getOilLevel() {
 		return oilLevel;
 	}
+	
+	public void oilRoboPet() {
+		oilLevel = oilLevel + 15;
+	}
 
 	@Override
 	public void goForAWalk() {
 		boredomLevel = boredomLevel - 7;
 		happyLevel = happyLevel + 10;
 		healthLevel = healthLevel + 8;
+		
 		
 	}
 

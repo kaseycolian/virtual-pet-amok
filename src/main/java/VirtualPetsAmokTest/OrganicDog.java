@@ -23,6 +23,10 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 	public int getSoiledAreaLevel() {
 		return soiledAreaLevel;
 	}
+	
+	public void cleanCage() {
+		soiledAreaLevel = soiledAreaLevel - 15;
+	}
 
 
 	@Override
@@ -88,14 +92,8 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		magicLevel = magicLevel + 3;
 		boredomLevel = boredomLevel + 3;
 		healthLevel = healthLevel - 3;
-	}
-
-	@Override
-	public String getAllLevelsForIndividual() {
-		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
-				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
-				+ boredomLevel + "\nBelly Fullness Level: " + needToWasteLevel + "\n Cage Dirtiness: "
-				+ soiledAreaLevel;
+		needToWasteLevel = needToWasteLevel + 3;
+		soiledAreaLevel = soiledAreaLevel + 5;
 	}
 
 	@Override
@@ -113,4 +111,12 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 			happyLevel = 100;
 		}
 	}
+	@Override
+	public String getAllLevelsForIndividual() {
+		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
+				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
+				+ boredomLevel + "\nBelly Fullness Level: " + needToWasteLevel + "\n Cage Dirtiness: "
+				+ soiledAreaLevel;
+	}
+
 }

@@ -141,7 +141,8 @@ public class VirtualPetShelter {
 			}
 			if (petToDisplay instanceof RoboDog) {
 				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
-						+ "\n\tFire Level: " + petToDisplay.getMagicLevel() + "    | Boredom Level: "
+						+  "\n\tHealth Level: " + ((RoboDog) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
+								+ ((RoboDog) petToDisplay).getHappyLevel() + "\n\tFire Level: " + petToDisplay.getMagicLevel() + "    | Boredom Level: "
 						+ petToDisplay.getBoredomLevel() + "\n\tOil Level: " + ((RoboDog) petToDisplay).getOilLevel());
 			}
 		}

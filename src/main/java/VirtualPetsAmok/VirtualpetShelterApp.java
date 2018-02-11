@@ -76,9 +76,9 @@ public class VirtualpetShelterApp {
 			case "6":
 				lairApp.cleanAllDogCages();
 				break;
-//			 case "7":
-//				 lairApp.
-//				break;
+			// case "7":
+			// lairApp.
+			// break;
 			// System.out.println("Which creature would you like to send to a far away
 			// land?" + lairApp.animals.values());
 			// String nameOfPetToAdopt = input.nextLine();
@@ -121,9 +121,14 @@ public class VirtualpetShelterApp {
 				lairApp.returnStatusOfAll();
 				break;
 			case "12":
-				System.out.println("The Lair and all of its creatures say goodbye, friend!\nAll progress will be lost!");
-				System.exit(0);
-				break;
+				System.out.println("Attention: This will end the game and any progress will be lost!");
+				System.out.println("Are you sure? \nType 1 for yes.\nType 2 for no.");
+				String answerToQuit = input.nextLine();
+				if (answerToQuit.equals("1")) {
+					System.out.println("The Lair and all of its creatures say goodbye, friend!!");
+					System.exit(0);
+				} else
+					break;
 			default:
 				System.out.println(
 						"The Lair does not recognize that request.  Please enter your desired choice once more:");

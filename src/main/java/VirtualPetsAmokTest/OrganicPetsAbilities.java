@@ -16,8 +16,9 @@ public interface OrganicPetsAbilities {
 
 	void tickEffectOne();
 
-//	void playWithOrganicPet();
-	
+	// void playWithOrganicPet(); //added this to Pets abstract class since all pets
+	// can be played with.
+
 	String getAllLevelsForIndividual();
 
 }

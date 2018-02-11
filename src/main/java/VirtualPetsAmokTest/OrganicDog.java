@@ -1,6 +1,6 @@
 package VirtualPetsAmokTest;
 
-public class OrganicDog {
+public class OrganicDog implements OrganicPetsAbilities {
 
 	private String microchipNumber;
 	private String nameOfPet;
@@ -47,10 +47,18 @@ public class OrganicDog {
 		return boredomLevel;
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getHungerLevel()
+	 */
+	@Override
 	public int getHungerLevel() {
 		return hungerLevel;
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getThirstLevel()
+	 */
+	@Override
 	public int getThirstLevel() {
 		return thirstLevel;
 	}
@@ -67,10 +75,18 @@ public class OrganicDog {
 		return healthLevel;
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getNeedToWasteLevel()
+	 */
+	@Override
 	public int getNeedToWasteLevel() {
 		return needToWasteLevel;
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getSoiledAreaLevel()
+	 */
+	@Override
 	public int getSoiledAreaLevel() {
 		return soiledAreaLevel;
 	}
@@ -97,6 +113,10 @@ public class OrganicDog {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#feedOne()
+	 */
+	@Override
 	public void feedOne() {
 		hungerLevel = hungerLevel - 10;
 		thirstLevel = thirstLevel + 3;
@@ -107,6 +127,10 @@ public class OrganicDog {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#waterOne()
+	 */
+	@Override
 	public void waterOne() {
 		thirstLevel = thirstLevel - 10;
 		hungerLevel = hungerLevel + 3;
@@ -117,6 +141,10 @@ public class OrganicDog {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#fireOne()
+	 */
+	@Override
 	public void fireOne() {
 		magicLevel = magicLevel - 10;
 		hungerLevel = hungerLevel + 3;
@@ -127,6 +155,10 @@ public class OrganicDog {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#tickEffectOne()
+	 */
+	@Override
 	public void tickEffectOne() {
 		hungerLevel = hungerLevel + 3;
 		thirstLevel = thirstLevel + 3;
@@ -135,6 +167,10 @@ public class OrganicDog {
 		healthLevel = healthLevel - 3;
 	}
 
+	/* (non-Javadoc)
+	 * @see VirtualPetsAmokTest.OrganicPetsAbilities#getAllLevelsForIndividual()
+	 */
+	@Override
 	public String getAllLevelsForIndividual() {
 		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
 				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "

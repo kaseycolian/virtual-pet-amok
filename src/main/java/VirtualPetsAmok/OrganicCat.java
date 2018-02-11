@@ -1,4 +1,4 @@
-package VirtualPetsAmokTest;
+package VirtualPetsAmok;
 
 public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	// not walkable - do not worry about individual waste

@@ -1,10 +1,12 @@
-package VirtualPetsAmokTest;
+package VirtualPetsAmok;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+
+import VirtualPetsAmok.RoboDog;
 
 public class RoboDogeTest {
 	RoboDog underTest = new RoboDog("2222", "Fidobot", "BotBot", false);

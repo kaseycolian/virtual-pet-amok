@@ -1,4 +1,4 @@
-package VirtualPetsAmokTest;
+package VirtualPetsAmok;
 
 public class RoboDog extends Pets implements Walkable {
 	// has TickForOne inherited, no need to override.

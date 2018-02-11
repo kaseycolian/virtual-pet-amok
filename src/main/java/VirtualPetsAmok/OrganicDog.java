@@ -1,4 +1,4 @@
-package VirtualPetsAmokTest;
+package VirtualPetsAmok;
 
 public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 

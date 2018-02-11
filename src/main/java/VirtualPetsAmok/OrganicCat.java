@@ -10,6 +10,8 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	private int thirstLevel = DEFAULT_THIRSTLEVEL;
 
 	public OrganicCat(String microchipNumber, String nameOfPet, String typeOfPet) {
+		// int hungerLevel, int thirstLevel,
+		// int magicLevel, int boredomLevel, int healthLevel, int happyLevel) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;

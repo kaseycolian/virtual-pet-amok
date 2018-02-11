@@ -1,7 +1,6 @@
 package VirtualPetsAmok;
 
 public abstract class Pets {
-
 	protected String microchipNumber;
 	protected String nameOfPet;
 	protected String typeOfPet;
@@ -9,11 +8,16 @@ public abstract class Pets {
 	static final int DEFAULT_HAPPYLEVEL = 50;
 	static final int DEFAULT_HEALTHLEVEL = 80;
 	static final int DEFAULT_MAGICLEVEL = 50;
-
 	protected int healthLevel = DEFAULT_HEALTHLEVEL;
 	protected int happyLevel = DEFAULT_HAPPYLEVEL;
 	protected int magicLevel = DEFAULT_MAGICLEVEL;
 	protected int boredomLevel = DEFAULT_BOREDOMLEVEL;
+
+	public Pets(String microchipNumber, String nameOfPet, String typeOfPet) {
+		this.microchipNumber = microchipNumber;
+		this.nameOfPet = nameOfPet;
+		this.typeOfPet = typeOfPet;
+	}
 
 	public Pets() {
 		super();

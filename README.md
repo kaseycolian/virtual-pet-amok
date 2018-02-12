@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-# virtual-pet-amok
->>>>>>> 017261b60e83da89a397e68ad3be488964b9e3d8
 Welcome to The Lair!
 
 We specialize in inclusivity, no matter your genees (or lack thereof), you are welcome here!
@@ -19,9 +15,7 @@ We'll take care of your other needs by keeping them low.  Our creatures have man
 * Belly Fullness Level
 * Soiled Cage Level
 
-<<<<<<< HEAD
 
 The game operates on a continuous loop. Each time the user interacts with the main menu, the tick effect is applied that effects levels of all creatures. The game will end when the user opts to end the game through the system menu. Good luck!
-=======
+
 You are more than welcome to add a new creature to The Lair or send one away to its new homelands. The game operates on a continuous loop. Each time the user interacts with the main menu, the tick effect is applied that effects each levels of all creatures. The game will end when the user opts to end the game through the system menu. Good luck!
->>>>>>> 017261b60e83da89a397e68ad3be488964b9e3d8

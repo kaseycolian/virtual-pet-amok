@@ -48,49 +48,19 @@ public abstract class Pets {
 	public int getHappyLevel() {
 		return happyLevel;
 	}
-	
+
 	public int getHealthLevel() {
 		return healthLevel;
 	}
 
-	// will need to override to customize for organic pets and robot pets.
 	public void playWithPet() {
-		boredomLevel = boredomLevel - 10;
-		happyLevel = happyLevel + 10;
-		magicLevel = magicLevel - 5;
-		healthLevel = healthLevel + 8;
-		if (boredomLevel - 10 <= 10) {
-			boredomLevel = 0;
-		}
-		if (happyLevel + 3 > 100) {
-			happyLevel = 100;
-		}
-	}
-
-	public void tickEffectOne() {
-		healthLevel = healthLevel - 3;
-		magicLevel = magicLevel + 3;
-		boredomLevel = boredomLevel + 3;
 
 	}
 
 	public void fireOne() {
-		magicLevel = magicLevel - 10;
-		happyLevel = happyLevel + 5;
-		boredomLevel = boredomLevel - 5;
-		healthLevel = healthLevel + 5;
-		if (healthLevel > 100) {
-			healthLevel = 100;
-		}
-		if (happyLevel > 100) {
-			happyLevel = 100;
-		}
-		if (boredomLevel < 0) {
-			boredomLevel = 0;
-		}
-		if (magicLevel<0) {
-			magicLevel = 0;
-		}
+	}
+
+	public void tickEffectOne() {
 	}
 
 }

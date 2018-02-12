@@ -1,6 +1,7 @@
 package VirtualPetsAmok;
 
 public class OrganicCat extends Pets implements OrganicPetsAbilities {
+	// inherited playWithPet method and method body, did not need to override.
 
 	static final int DEFAULT_HUNGERLEVEL = 50;
 	static final int DEFAULT_THIRSTLEVEL = 50;
@@ -12,7 +13,6 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-
 	}
 
 	@Override
@@ -23,6 +23,26 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	@Override
 	public int getThirstLevel() {
 		return thirstLevel;
+	}
+
+	@Override
+	public void playWithPet() {
+		boredomLevel = boredomLevel - 10;
+		happyLevel = happyLevel + 10;
+		magicLevel = magicLevel - 5;
+		healthLevel = healthLevel + 8;
+		hungerLevel = hungerLevel + 5;
+		thirstLevel = thirstLevel + 5;
+		if (boredomLevel < 0) {
+			boredomLevel = 0;
+		}
+		if (happyLevel > 100) {
+			happyLevel = 100;
+		}
+		if (magicLevel < 0) {
+			magicLevel = 0;
+		}
+
 	}
 
 	@Override
@@ -80,11 +100,19 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 		hungerLevel = hungerLevel + 5;
 		thirstLevel = thirstLevel + 3;
 		healthLevel = healthLevel + 4;
+		boredomLevel = boredomLevel - 5;
+		happyLevel = happyLevel + 5;
 		if (magicLevel < 0) {
 			magicLevel = 0;
 		}
 		if (healthLevel > 100) {
 			healthLevel = 100;
+		}
+		if (boredomLevel < 0) {
+			boredomLevel = 0;
+		}
+		if (happyLevel > 100) {
+			happyLevel = 100;
 		}
 	}
 

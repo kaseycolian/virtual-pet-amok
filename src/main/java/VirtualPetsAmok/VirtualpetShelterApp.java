@@ -22,15 +22,15 @@ public class VirtualpetShelterApp {
 		lairApp.addAnimal(pet5.getMicrochipNumber(), pet5);
 
 		boolean gameRunning = true;
+		
 		System.out.println(
 				"Welcome to The Lair!\n\nSometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
 		System.out.println(
 				"\nHere at The Lair we ask that you help take care of your fellow creatures.\nEvery time you interact with our creatures, their needs increase in other areas.\n");
 		System.out.println("\nHere are the current cave creatures of The Lair and their current condition:\n");
-		lairApp.returnStatusOfAll();
 
 		do {
-			lairApp.tickAll();
+			lairApp.returnStatusOfAll();
 			System.out.println("\n\nSelect an option below:\n");
 			System.out.println("Type 1 to feed all of the creatures some tasty little critters.");
 			System.out.println("Type 2 to let all of the creatures drink from The Pool of Elven Tears.");
@@ -135,6 +135,7 @@ public class VirtualpetShelterApp {
 				System.out.println(
 						"The Lair does not recognize that request.  Please enter your desired choice once more:");
 			}
+			lairApp.tickAll();
 		} while (gameRunning = true);
 	}
 

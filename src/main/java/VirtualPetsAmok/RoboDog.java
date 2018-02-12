@@ -1,8 +1,7 @@
 package VirtualPetsAmok;
 
 public class RoboDog extends Pets implements Walkable {
-	// has TickForOne inherited, no need to override.
-	static final int DEFAULT_OILLEVEL = 50;
+	static final int DEFAULT_OILLEVEL = 60;
 
 	private int oilLevel = DEFAULT_OILLEVEL;
 //	private Boolean isOilable;

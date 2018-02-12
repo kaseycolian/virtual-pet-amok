@@ -14,6 +14,8 @@ We'll take care of your other needs by keeping them low.  Our creatures have man
 * Magic Level
 * Boredom Level
 * Belly Fullness Level
+* Soiled Cage Level
+
 
 
 

@@ -5,17 +5,16 @@ public class RoboDog extends Pets implements Walkable {
 	static final int DEFAULT_OILLEVEL = 50;
 
 	private int oilLevel = DEFAULT_OILLEVEL;
-	private Boolean isOilable;
-
-	public Boolean getOilableStatus() {
-		return isOilable;
-	}
+//	private Boolean isOilable;
+//
+//	public Boolean getOilableStatus() {
+//		return isOilable;
+	//	}
 
 	public RoboDog(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-		// this.isOilable = isOilable;
 
 	}
 
@@ -51,11 +50,6 @@ public class RoboDog extends Pets implements Walkable {
 		boredomLevel = boredomLevel + 3;
 		oilLevel = oilLevel - 8;
 		happyLevel = happyLevel - 3;
-	}
-
-	public String getAllLevelsForIndividual() {
-		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nMagic Level:  "
-				+ magicLevel + "\nBoredom Level: " + boredomLevel + "\nOil Level: " + oilLevel;
 	}
 
 	@Override

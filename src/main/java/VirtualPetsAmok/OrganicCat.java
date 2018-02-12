@@ -1,7 +1,6 @@
 package VirtualPetsAmok;
 
 public class OrganicCat extends Pets implements OrganicPetsAbilities {
-	// not walkable - do not worry about individual waste
 
 	static final int DEFAULT_HUNGERLEVEL = 50;
 	static final int DEFAULT_THIRSTLEVEL = 50;
@@ -10,8 +9,6 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	private int thirstLevel = DEFAULT_THIRSTLEVEL;
 
 	public OrganicCat(String microchipNumber, String nameOfPet, String typeOfPet) {
-		// int hungerLevel, int thirstLevel,
-		// int magicLevel, int boredomLevel, int healthLevel, int happyLevel) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
@@ -47,16 +44,16 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 
 	}
 
+	public void makeSad() {
+		happyLevel = happyLevel - 10;
+	}
+
 	public void makeHappy() {
 		happyLevel = happyLevel + 15;
 		{
 			if (happyLevel > 100)
 				happyLevel = 100;
 		}
-	}
-
-	public void makeSad() {
-		happyLevel = happyLevel - 10;
 	}
 
 	@Override
@@ -99,13 +96,6 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 		boredomLevel = boredomLevel + 6;
 		healthLevel = healthLevel - 3;
 		happyLevel = happyLevel - 3;
-	}
-
-	@Override
-	public String getAllLevelsForIndividual() {
-		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
-				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
-				+ boredomLevel;
 	}
 
 	@Override

@@ -12,6 +12,4 @@ public interface OrganicPetsAbilities {
 
 	void fireOne();
 
-	String getAllLevelsForIndividual();
-
 }

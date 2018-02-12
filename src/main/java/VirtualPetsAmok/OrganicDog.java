@@ -18,8 +18,6 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		this.typeOfPet = typeOfPet;
 	}
 
-	// soiledAreaLevel is unique for this animal type. (Individual cages, not
-	// communal litter box);
 	public int getSoiledAreaLevel() {
 		return soiledAreaLevel;
 	}
@@ -140,14 +138,6 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 		if (happyLevel > 100) {
 			happyLevel = 100;
 		}
-	}
-
-	@Override
-	public String getAllLevelsForIndividual() {
-		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
-				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
-				+ boredomLevel + "\nBelly Fullness Level: " + needToWasteLevel + "\n Cage Dirtiness: "
-				+ soiledAreaLevel;
 	}
 
 	@Override

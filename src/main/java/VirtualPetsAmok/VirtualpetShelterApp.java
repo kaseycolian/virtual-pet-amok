@@ -73,7 +73,6 @@ public class VirtualpetShelterApp {
 					System.out.println("Oops! " + microchipOfPetToPlay
 							+ " cannot be found! Pick something else to do at The Lair!");
 				}
-
 				break;
 			case "6":
 				lairApp.cleanAllDogCages();

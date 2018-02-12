@@ -1,13 +1,13 @@
 package VirtualPetsAmok;
 
-import java.util.ListIterator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Creatures {
 	protected String microchipNumber;
 	protected String nameOfPet;
 	protected String typeOfPet;
-	static final int DEFAULT_BOREDOMLEVEL = ThreadLocalRandom.current().nextInt(25, 60);
+	static final int DEFAULT_BOREDOMLEVEL = ThreadLocalRandom.current().nextInt(25, 60); // had set to non-random
+																							// numbers for testing
 	static final int DEFAULT_HAPPYLEVEL = ThreadLocalRandom.current().nextInt(40, 65);
 	static final int DEFAULT_HEALTHLEVEL = ThreadLocalRandom.current().nextInt(70, 95);
 	static final int DEFAULT_MAGICLEVEL = ThreadLocalRandom.current().nextInt(10, 50);

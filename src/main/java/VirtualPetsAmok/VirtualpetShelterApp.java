@@ -27,7 +27,8 @@ public class VirtualpetShelterApp {
 				"Welcome to The Lair!  Sometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
 		System.out.println(
 				"\n** Here at The Lair we ask that you help take care of your fellow creatures. We have different types of creatures with different types of needs.");
-		System.out.println("** We have messy creatures here, so make sure you clean the areas they mess up, or you'll have lots of sad and unhealthy creatures roaming The Lair.");
+		System.out.println(
+				"** We have messy creatures here, so make sure you clean the areas they mess up, or you'll have lots of sad and unhealthy creatures roaming The Lair.");
 		System.out.println("** Every time you interact with our creatures, their needs will increase in other areas.");
 
 		do {
@@ -39,9 +40,9 @@ public class VirtualpetShelterApp {
 			System.out.println("Type 3 to release the magic building inside all these mighty creatures.");
 			System.out.println("Type 4 to walk all dragons and robodragons.");
 			System.out.println("Type 5 to take one creature out for a short journey.");
-			System.out.println("Type 6 to clean all dragon cages.");
-			System.out.println("Type 7 to clean the floor underneath all of the Phoenixes.");
-			System.out.println("Type 8 to oil all robotic dragons.");
+			System.out.println("Type 6 to clean the caves of every dragon.");
+			System.out.println("Type 7 to clean the floor underneath The Phoenix Arboretum.");
+			System.out.println("Type 8 to oil the robodragons, making them as feirce as the real ones.");
 			System.out.println("Type 9 to permanently send a creature to its new castlelands.");
 			System.out.println("Type 10 to admit a new creature you have found in need of care.");
 			System.out.println("Type 11 to check the status on all creatures at The Lair.");
@@ -67,7 +68,7 @@ public class VirtualpetShelterApp {
 				String microchipOfPetToPlay = input.nextLine();
 				if (lairApp.microchipNumber.contains(microchipOfPetToPlay)) {
 					lairApp.playWithPet(microchipOfPetToPlay);
-					System.out.println("Thanks for the excursion!");
+					System.out.println("Thanks for the excursion, mini-journeys do a lot for our wellbeing!");
 				} else {
 					System.out.println("Oops! " + microchipOfPetToPlay
 							+ " cannot be found! Pick something else to do at The Lair!");

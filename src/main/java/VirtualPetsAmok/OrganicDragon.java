@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Walkable {
 
 	static final int DEFAULT_NEEDTOWASTELEVEL = 15;
-	static final int DEFAULT_HUNGERLEVEL = ThreadLocalRandom.current().nextInt(20, 60);
+	static final int DEFAULT_HUNGERLEVEL = ThreadLocalRandom.current().nextInt(20, 60); // had set values for testing
 	static final int DEFAULT_THIRSTLEVEL = ThreadLocalRandom.current().nextInt(20, 50);
 	static final int DEFAULT_SOILEDAREALEVEL = 5;
 
@@ -39,7 +39,7 @@ public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Wa
 	}
 
 	public void cleanCage() {
-		soiledAreaLevel = soiledAreaLevel - 15;
+		soiledAreaLevel = soiledAreaLevel - 25;
 		if (soiledAreaLevel < 0) {
 			soiledAreaLevel = 0;
 		}
@@ -72,6 +72,8 @@ public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Wa
 		magicLevel = magicLevel + 3;
 		healthLevel = healthLevel + 5;
 		happyLevel = happyLevel + 3;
+		soiledAreaLevel = soiledAreaLevel + 10;
+		needToWasteLevel = needToWasteLevel + 15;
 		if (hungerLevel < 0) {
 			hungerLevel = 0;
 		}
@@ -90,6 +92,8 @@ public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Wa
 		magicLevel = magicLevel + 3;
 		healthLevel = healthLevel + 3;
 		happyLevel = happyLevel + 4;
+		soiledAreaLevel = soiledAreaLevel + 5;
+		needToWasteLevel = needToWasteLevel + 8;
 		if (thirstLevel <= 0) {
 			thirstLevel = 0;
 		}
@@ -134,11 +138,15 @@ public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Wa
 		happyLevel = happyLevel + 10;
 		magicLevel = magicLevel - 5;
 		healthLevel = healthLevel + 8;
+		needToWasteLevel = needToWasteLevel - 5;
 		if (boredomLevel < 0) {
 			boredomLevel = 0;
 		}
 		if (happyLevel > 100) {
 			happyLevel = 100;
+		}
+		if (needToWasteLevel < 0) {
+			needToWasteLevel = 0;
 		}
 	}
 

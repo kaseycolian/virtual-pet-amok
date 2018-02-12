@@ -1,13 +1,8 @@
 package VirtualPetsAmok;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Set;
 
@@ -16,7 +11,7 @@ public class VirtualPetShelter {
 	static final int DEFAULT_LITTERBOXLEVEL = ThreadLocalRandom.current().nextInt(0, 20);
 	private int litterBoxLevel = DEFAULT_LITTERBOXLEVEL;
 
-	Map<String, Creatures> animals = new HashMap<>();
+	public Map<String, Creatures> animals = new HashMap<>();
 	public Set<String> microchipNumber = animals.keySet();
 
 	public void addAnimal(String microchipNumber, Creatures animal) {
@@ -142,6 +137,11 @@ public class VirtualPetShelter {
 				((OrganicPhoenix) pet).makeSad();
 			}
 		}
+	}
+
+	public int getLitterBoxLeveL() {
+
+		return litterBoxLevel;
 	}
 
 	public void litterBoxEmpty() {

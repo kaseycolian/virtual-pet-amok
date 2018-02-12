@@ -3,7 +3,6 @@ package VirtualPetsAmok;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class OrganicPhoenix extends Creatures implements OrganicPetsAbilities {
-	// inherited playWithPet method and method body, did not need to override.
 
 	static final int DEFAULT_HUNGERLEVEL = ThreadLocalRandom.current().nextInt(15, 55);
 	static final int DEFAULT_THIRSTLEVEL = ThreadLocalRandom.current().nextInt(15, 45);

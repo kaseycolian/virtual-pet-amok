@@ -2,8 +2,6 @@ package VirtualPetsAmok;
 
 import java.util.Scanner;
 
-import hospital.Employee;
-
 public class VirtualpetShelterApp {
 
 	public static void main(String[] args) {
@@ -63,14 +61,14 @@ public class VirtualpetShelterApp {
 				break;
 			case "5":
 				lairApp.showAllNumbsNamesAndTypes();
-				System.out.println("Please enter a creature chip number to take one on a mini-journey: ");
+				System.out.println("Please enter a creature chip number to take one on a mini-journey:");
 				String microchipOfPetToPlay = input.nextLine();
 				if (lairApp.microchipNumber.contains(microchipOfPetToPlay)) {
 					lairApp.playWithPet(microchipOfPetToPlay);
 					System.out.println("Thanks for the excursion!");
 				} else {
 					System.out.println("Oops! " + microchipOfPetToPlay
-							+ "cannot be found! Pick something else to do at The Lair!");
+							+ " cannot be found! Pick something else to do at The Lair!");
 				}
 
 				break;
@@ -83,25 +81,17 @@ public class VirtualpetShelterApp {
 			case "8":
 				lairApp.oilAllRobots();
 				break;
-			// case "7":
-			// lairApp.
-			// break;
-			// System.out.println("Which creature would you like to send to a far away
-			// land?" + lairApp.animals.values());
-			// String nameOfPetToAdopt = input.nextLine();
-			// if (!(lairApp.nameOfPet.contains(nameOfPetToAdopt))) {
-			// System.out
-			// .println("Sorry, that creature must already be out on its journey to its new
-			// castleland!");
-			// } else {
-			// lairApp.adopt(nameOfPetToAdopt);
-			// System.out.println(nameOfPetToAdopt
-			// + " is off onto its journey to its new lands! Thank you finding a new
-			// castleland for our creature to call home!s");
-			// }
-			// break;
-			// case "9":
-			// break;
+			case "9":
+				System.out.println(
+						"Which creature would you like to send off to its new castlelands? Enter its microchip number: ");
+				lairApp.showAllNumbsNamesAndTypes();
+				String numberOfPetToAdopt = input.nextLine();
+				if (!(lairApp.microchipNumber.contains(numberOfPetToAdopt))) {
+					System.out.println("Sorry, that creature must already be off living in its new castlelands!");
+				} else {
+					lairApp.adopt(numberOfPetToAdopt);
+				}
+				break;
 			case "10":
 				System.out.println("Thank you for finding a creature in need!");
 				System.out.println("Enter its microchip number.");

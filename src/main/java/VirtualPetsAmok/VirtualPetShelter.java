@@ -84,15 +84,25 @@ public class VirtualPetShelter {
 
 	}
 
+	public void playWithOne() {
+
+	}
+
 	public void showAllNumbsNamesAndTypes() {
 		for (Pets pet : animals.values()) {
 			System.out.println(pet.getMicrochipNumber() + " " + pet.getPetName() + " the " + pet.getTypeOfPet());
 		}
 	}
-	
+
 	public void playWithPet(String microchipNumber) {
 		Pets petToPlay = animals.get(microchipNumber);
 		petToPlay.playWithPet();
+	}
+
+	public void adopt(String numberOfPetToAdopt) {
+		animals.remove(numberOfPetToAdopt);
+		System.out.println(numberOfPetToAdopt + "  is off onto its journey to its new lands! Thank you finding new castlelands for it to call home!");
+
 	}
 
 	public void oilAllRobots() {
@@ -142,10 +152,6 @@ public class VirtualPetShelter {
 		System.out.println("Thanks! We are only allowed to release our magic under supervision per The Lair contract.");
 	}
 
-	// public void playWithPet() {
-	// for (Pets petToPlay: animals.containsKey(petToPlay))
-	// }
-
 	public void returnStatusOfAll() {
 		System.out.println();
 		System.out.println("The Lair litter box level: " + litterBoxLevel);
@@ -164,7 +170,4 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public void playWithOne() {
-
-	}
 }

@@ -137,33 +137,47 @@ public class VirtualPetShelter {
 
 	public void returnStatusOfAll() {
 		System.out.println();
-		System.out.println("Litter box level is: " + litterBoxLevel);
+		System.out.println("The Lair litter box level: " + litterBoxLevel);
 		System.out.println();
 		for (Pets petToDisplay : animals.values()) {
 			if (petToDisplay instanceof OrganicDog) {
-				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
-						+ "\n\tHealth Level: " + ((OrganicDog) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
-						+ ((OrganicDog) petToDisplay).getHappyLevel() + "\n\tHunger Level: "
-						+ ((OrganicDog) petToDisplay).getHungerLevel() + "  |  Thirst Level: "
-						+ ((OrganicDog) petToDisplay).getThirstLevel() + "\n\tFire Level: "
-						+ petToDisplay.getMagicLevel() + "    | Boredom Level: " + petToDisplay.getBoredomLevel()
-						+ "\n\tNeed To Waste Level: " + ((OrganicDog) petToDisplay).getNeedToWasteLevel()
-						+ "\n\tCage Filth Level: " + ((OrganicDog) petToDisplay).getSoiledAreaLevel());
+				System.out.println(petToDisplay.toString());
+				// System.out.println(petToDisplay.getPetName() + " the " +
+				// petToDisplay.getTypeOfPet()
+				// + "\n\tHealth Level: " + ((OrganicDog) petToDisplay).getHealthLevel() + " |
+				// Happiness Level: "
+				// + ((OrganicDog) petToDisplay).getHappyLevel() + "\n\tHunger Level: "
+				// + ((OrganicDog) petToDisplay).getHungerLevel() + " | Thirst Level: "
+				// + ((OrganicDog) petToDisplay).getThirstLevel() + "\n\tFire Level: "
+				// + petToDisplay.getMagicLevel() + " | Boredom Level: " +
+				// petToDisplay.getBoredomLevel()
+				// + "\n\tNeed To Waste Level: " + ((OrganicDog)
+				// petToDisplay).getNeedToWasteLevel()
+				// + "\n\tCage Filth Level: " + ((OrganicDog)
+				// petToDisplay).getSoiledAreaLevel());
 			}
 			if (petToDisplay instanceof OrganicCat) {
-				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
-						+ "\n\tHealth Level: " + ((OrganicCat) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
-						+ ((OrganicCat) petToDisplay).getHappyLevel() + "\n\tHunger Level: "
-						+ ((OrganicCat) petToDisplay).getHungerLevel() + "  | Thirst Level: "
-						+ ((OrganicCat) petToDisplay).getThirstLevel() + "\n\tFire Level: "
-						+ petToDisplay.getMagicLevel() + "    | Boredom Level: " + petToDisplay.getBoredomLevel());
+				System.out.println(petToDisplay.toString());
+				// System.out.println(petToDisplay.getPetName() + " the " +
+				// petToDisplay.getTypeOfPet()
+				// + "\n\tHealth Level: " + ((OrganicCat) petToDisplay).getHealthLevel() + " |
+				// Happiness Level: "
+				// + ((OrganicCat) petToDisplay).getHappyLevel() + "\n\tHunger Level: "
+				// + ((OrganicCat) petToDisplay).getHungerLevel() + " | Thirst Level: "
+				// + ((OrganicCat) petToDisplay).getThirstLevel() + "\n\tFire Level: "
+				// + petToDisplay.getMagicLevel() + " | Boredom Level: " +
+				// petToDisplay.getBoredomLevel());
 			}
 			if (petToDisplay instanceof RoboDog) {
-				System.out.println(petToDisplay.getPetName() + " the " + petToDisplay.getTypeOfPet()
-						+ "\n\tHealth Level: " + ((RoboDog) petToDisplay).getHealthLevel() + "  |  Happiness Level: "
-						+ ((RoboDog) petToDisplay).getHappyLevel() + "\n\tFire Level: " + petToDisplay.getMagicLevel()
-						+ "    | Boredom Level: " + petToDisplay.getBoredomLevel() + "\n\tOil Level: "
-						+ ((RoboDog) petToDisplay).getOilLevel());
+				System.out.println(petToDisplay.toString());
+				// System.out.println(petToDisplay.getPetName() + " the " +
+				// petToDisplay.getTypeOfPet()
+				// + "\n\tHealth Level: " + ((RoboDog) petToDisplay).getHealthLevel() + " |
+				// Happiness Level: "
+				// + ((RoboDog) petToDisplay).getHappyLevel() + "\n\tFire Level: " +
+				// petToDisplay.getMagicLevel()
+				// + " | Boredom Level: " + petToDisplay.getBoredomLevel() + "\n\tOil Level: "
+				// + ((RoboDog) petToDisplay).getOilLevel());
 			}
 		}
 	}

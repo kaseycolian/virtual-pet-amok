@@ -22,7 +22,6 @@ public class VirtualpetShelterApp {
 		lairApp.addAnimal(pet5.getMicrochipNumber(), pet5);
 
 		boolean gameRunning = true;
-
 		System.out.println(
 				"Welcome to The Lair!\n\nSometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
 		System.out.println(

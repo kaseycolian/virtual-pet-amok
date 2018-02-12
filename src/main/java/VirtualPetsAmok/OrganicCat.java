@@ -48,9 +48,10 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 	}
 
 	public void makeHappy() {
-		happyLevel = happyLevel + 15;{
-			if (happyLevel>100)
-				happyLevel =100;
+		happyLevel = happyLevel + 15;
+		{
+			if (happyLevel > 100)
+				happyLevel = 100;
 		}
 	}
 
@@ -105,5 +106,13 @@ public class OrganicCat extends Pets implements OrganicPetsAbilities {
 		return "The current levels for " + nameOfPet + " are:\nHealth Level: " + healthLevel + "\nHunger Level: "
 				+ hungerLevel + "\nThirst Level: " + thirstLevel + "\nMagic Level:  " + magicLevel + "\nBoredom Level: "
 				+ boredomLevel;
+	}
+
+	@Override
+	public String toString() {
+		return "The current levels for " + nameOfPet + " the " + typeOfPet + " are:" + "\n\tHealth Level: "
+				+ healthLevel + "  |  Happiness Level: " + happyLevel + "\n\tHunger Level: " + hungerLevel
+				+ "  | Thirst Level: " + thirstLevel + "\n\tFire Level: " + magicLevel;
+
 	}
 }

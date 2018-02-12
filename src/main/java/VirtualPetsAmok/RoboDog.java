@@ -15,7 +15,7 @@ public class RoboDog extends Pets implements Walkable {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-//		this.isOilable = isOilable;
+		// this.isOilable = isOilable;
 
 	}
 
@@ -58,4 +58,10 @@ public class RoboDog extends Pets implements Walkable {
 				+ magicLevel + "\nBoredom Level: " + boredomLevel + "\nOil Level: " + oilLevel;
 	}
 
+	@Override
+	public String toString() {
+		return "The current levels for " + nameOfPet + " the " + typeOfPet + " are:" + "\n\tHealth Level: "
+				+ healthLevel + "  |  Happiness Level: " + happyLevel + "\n\tFire Level: " + magicLevel
+				+ "    | Boredom Level: " + boredomLevel + "\n\tOil Level: " + oilLevel;
+	}
 }

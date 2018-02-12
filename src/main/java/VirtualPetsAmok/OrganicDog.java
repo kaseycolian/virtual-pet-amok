@@ -150,4 +150,13 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 				+ soiledAreaLevel;
 	}
 
+	@Override
+	public String toString() {
+		return "The current levels for " + nameOfPet + " the " + typeOfPet + " are:" + "\n\tHealth Level: "
+				+ healthLevel + "  |  Happiness Level: " + happyLevel + "\n\tHunger Level: " + hungerLevel
+				+ "  |  Thirst Level: " + thirstLevel + "\n\tFire Level: " + magicLevel + "    | Boredom Level: "
+				+ boredomLevel + "\n\tNeed To Waste Level: " + needToWasteLevel + "\n\tCage Filth Level: "
+				+ soiledAreaLevel;
+	}
+
 }

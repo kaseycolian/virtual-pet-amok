@@ -9,11 +9,11 @@ We want you to be healthy, happy, and oiled, and those are the only levels aroun
 
 We'll take care of your other needs by keeping them low.  Our creatures have many needs, which all effect each other.  Our goal is to keep you low in these areas:
 
-*Hunger Level
-*Thirst Level
-*Magic Level
-*Boredom Level
-*Belly Fullness Level
+* Hunger Level
+* Thirst Level
+* Magic Level
+* Boredom Level
+* Belly Fullness Level
 
 
 

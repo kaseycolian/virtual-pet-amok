@@ -9,11 +9,11 @@ public class VirtualpetShelterApp {
 
 		VirtualPetShelter lairApp = new VirtualPetShelter();
 
-		Pets pet1 = new OrganicDog("1111", "Tank", "Dog");
-		Pets pet2 = new OrganicCat("2222", "Chairman", "Cat");
-		Pets pet3 = new OrganicDog("3333", "Mister", "Dog");
-		Pets pet4 = new OrganicCat("4444", "Chubs", "Cat");
-		Pets pet5 = new RoboDog("5555", "Dozer", "Robodog");
+		Creatures pet1 = new OrganicDragon("1111", "Tank", "Dragon");
+		Creatures pet2 = new OrganicPhoenix("2222", "Chairman", "Phoenix");
+		Creatures pet3 = new OrganicDragon("3333", "Mister", "Dragon");
+		Creatures pet4 = new OrganicPhoenix("4444", "Chubs", "Phoenix");
+		Creatures pet5 = new RoboDragon("5555", "Dozer", "RoboDragon");
 
 		lairApp.addAnimal(pet1.getMicrochipNumber(), pet1);
 		lairApp.addAnimal(pet2.getMicrochipNumber(), pet2);
@@ -24,12 +24,14 @@ public class VirtualpetShelterApp {
 		boolean gameRunning = true;
 
 		System.out.println(
-				"Welcome to The Lair!\n\nSometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
+				"Welcome to The Lair!  Sometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
 		System.out.println(
-				"\nHere at The Lair we ask that you help take care of your fellow creatures.\nEvery time you interact with our creatures, their needs increase in other areas.\n");
-		System.out.println("\nHere are the current cave creatures of The Lair and their current condition:\n");
+				"\n** Here at The Lair we ask that you help take care of your fellow creatures. We have different types of creatures with different types of needs.");
+		System.out.println("** We have messy creatures here, so make sure you clean the areas they mess up, or you'll have lots of sad and unhealthy creatures roaming The Lair.");
+		System.out.println("** Every time you interact with our creatures, their needs will increase in other areas.");
 
 		do {
+			System.out.println("\n\nCurrent creatures of The Lair and their current conditions:");
 			lairApp.returnStatusOfAll();
 			System.out.println("\n\nSelect an option below:\n");
 			System.out.println("Type 1 to feed all of the creatures some tasty little critters.");
@@ -102,13 +104,13 @@ public class VirtualpetShelterApp {
 						+ "? Type 1 for Phoenix, Type 2 for Dragon, Type 3 for RoboDragon");
 				String typeOfNewPet = input.nextLine();
 				if (typeOfNewPet.equals("1")) {
-					lairApp.addYourOwnOrganicCat(newMicrochipNumber, nameOfNewPet, "Phoenix");
+					lairApp.addYourOwnOrganicPhoenix(newMicrochipNumber, nameOfNewPet, "Phoenix");
 				}
 				if (typeOfNewPet.equals("2")) {
-					lairApp.addYourOwnOrganicDog(newMicrochipNumber, nameOfNewPet, "Dragon");
+					lairApp.addYourOwnOrganicDragon(newMicrochipNumber, nameOfNewPet, "Dragon");
 				}
 				if (typeOfNewPet.equals("3")) {
-					lairApp.addYourOwnRoboDog(newMicrochipNumber, nameOfNewPet, "RoboDragon");
+					lairApp.addYourOwnRoboDragon(newMicrochipNumber, nameOfNewPet, "RoboDragon");
 				}
 				break;
 			case "11":

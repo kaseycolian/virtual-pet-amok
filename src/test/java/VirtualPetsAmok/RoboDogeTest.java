@@ -6,10 +6,10 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import VirtualPetsAmok.RoboDog;
+//import VirtualPetsAmok.RoboDragon;
 
 public class RoboDogeTest {
-	RoboDog underTest = new RoboDog("2222", "Fidobot", "BotBot", false);
+	RoboDragon underTest = new RoboDragon("2222", "Fidobot", "BotBot");
 
 	@Test
 	public void shouldReturnNameOfRoboDog() {
@@ -28,12 +28,6 @@ public class RoboDogeTest {
 	public void shouldReturnAnimalType() {
 		String check = underTest.getTypeOfPet();
 		assertEquals(check, "BotBot");
-	}
-
-	@Test
-	public void shouldBeOilable() {
-		Boolean isOilable = underTest.getOilableStatus();
-		assertThat(isOilable, is(false));
 	}
 
 	@Test // Also passed test when total amount was over 100 to only return 100.

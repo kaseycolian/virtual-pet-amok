@@ -1,15 +1,17 @@
 package VirtualPetsAmok;
 
-public class OrganicCat extends Pets implements OrganicPetsAbilities {
+import java.util.concurrent.ThreadLocalRandom;
+
+public class OrganicPhoenix extends Creatures implements OrganicPetsAbilities {
 	// inherited playWithPet method and method body, did not need to override.
 
-	static final int DEFAULT_HUNGERLEVEL = 50;
-	static final int DEFAULT_THIRSTLEVEL = 50;
+	static final int DEFAULT_HUNGERLEVEL = ThreadLocalRandom.current().nextInt(15, 55);
+	static final int DEFAULT_THIRSTLEVEL = ThreadLocalRandom.current().nextInt(15, 45);
 
 	private int hungerLevel = DEFAULT_HUNGERLEVEL;
 	private int thirstLevel = DEFAULT_THIRSTLEVEL;
 
-	public OrganicCat(String microchipNumber, String nameOfPet, String typeOfPet) {
+	public OrganicPhoenix(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;

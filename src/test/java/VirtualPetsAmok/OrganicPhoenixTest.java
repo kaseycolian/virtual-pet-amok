@@ -6,11 +6,11 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import VirtualPetsAmok.OrganicCat;
+import VirtualPetsAmok.OrganicPhoenix;
 
-public class OrganicCatTest {
+public class OrganicPhoenixTest {
 
-	OrganicCat underTest = new OrganicCat("1234", "Tank", "bat");
+	OrganicPhoenix underTest = new OrganicPhoenix("1234", "Tank", "bat");
 
 	@Test
 	public void shouldDisplayNameOfPet() {

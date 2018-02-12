@@ -1,20 +1,16 @@
 package VirtualPetsAmok;
 
-public class RoboDog extends Pets implements Walkable {
-	static final int DEFAULT_OILLEVEL = 60;
+import java.util.concurrent.ThreadLocalRandom;
+
+public class RoboDragon extends Creatures implements Walkable {
+	static final int DEFAULT_OILLEVEL = ThreadLocalRandom.current().nextInt(25, 60);
 
 	private int oilLevel = DEFAULT_OILLEVEL;
-	// private Boolean isOilable;
-	//
-	// public Boolean getOilableStatus() {
-	// return isOilable;
-	// }
 
-	public RoboDog(String microchipNumber, String nameOfPet, String typeOfPet) {
+	public RoboDragon(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;
-
 	}
 
 	public int getOilLevel() {

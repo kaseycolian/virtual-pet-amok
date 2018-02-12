@@ -1,10 +1,12 @@
 package VirtualPetsAmok;
 
-public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
+import java.util.concurrent.ThreadLocalRandom;
+
+public class OrganicDragon extends Creatures implements OrganicPetsAbilities, Walkable {
 
 	static final int DEFAULT_NEEDTOWASTELEVEL = 15;
-	static final int DEFAULT_HUNGERLEVEL = 50;
-	static final int DEFAULT_THIRSTLEVEL = 50;
+	static final int DEFAULT_HUNGERLEVEL = ThreadLocalRandom.current().nextInt(20, 60);
+	static final int DEFAULT_THIRSTLEVEL = ThreadLocalRandom.current().nextInt(20, 50);
 	static final int DEFAULT_SOILEDAREALEVEL = 5;
 
 	private int needToWasteLevel = DEFAULT_NEEDTOWASTELEVEL;
@@ -12,7 +14,7 @@ public class OrganicDog extends Pets implements OrganicPetsAbilities, Walkable {
 	private int thirstLevel = DEFAULT_THIRSTLEVEL;
 	private int soiledAreaLevel = DEFAULT_SOILEDAREALEVEL;
 
-	public OrganicDog(String microchipNumber, String nameOfPet, String typeOfPet) {
+	public OrganicDragon(String microchipNumber, String nameOfPet, String typeOfPet) {
 		this.microchipNumber = microchipNumber;
 		this.nameOfPet = nameOfPet;
 		this.typeOfPet = typeOfPet;

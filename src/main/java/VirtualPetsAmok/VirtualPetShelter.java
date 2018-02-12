@@ -84,6 +84,17 @@ public class VirtualPetShelter {
 
 	}
 
+	public void showAllNumbsNamesAndTypes() {
+		for (Pets pet : animals.values()) {
+			System.out.println(pet.getMicrochipNumber() + " " + pet.getPetName() + " the " + pet.getTypeOfPet());
+		}
+	}
+	
+	public void playWithPet(String microchipNumber) {
+		Pets petToPlay = animals.get(microchipNumber);
+		petToPlay.playWithPet();
+	}
+
 	public void oilAllRobots() {
 		for (Pets pet : animals.values()) {
 			if (pet instanceof RoboDog) {
@@ -151,5 +162,9 @@ public class VirtualPetShelter {
 
 			}
 		}
+	}
+
+	public void playWithOne() {
+
 	}
 }

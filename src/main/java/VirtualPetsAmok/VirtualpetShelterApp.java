@@ -2,6 +2,8 @@ package VirtualPetsAmok;
 
 import java.util.Scanner;
 
+import hospital.Employee;
+
 public class VirtualpetShelterApp {
 
 	public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class VirtualpetShelterApp {
 		lairApp.addAnimal(pet5.getMicrochipNumber(), pet5);
 
 		boolean gameRunning = true;
-		
+
 		System.out.println(
 				"Welcome to The Lair!\n\nSometimes creatures become banished from their castle homes and cannot find suitable cave dwellings.");
 		System.out.println(
@@ -59,24 +61,27 @@ public class VirtualpetShelterApp {
 			case "4":
 				lairApp.walkAllDogs();
 				break;
-			// case "5":
-			// System.out.println("Please select a pet to take on a mini-journey: " +
-			// lairApp.microchipNumber);
-			// String microchipOfPetToPlay = input.nextLine();
-			// if (lairApp.microchipNumber.contains(microchipOfPetToPlay)) {
-			// pets.playWithOne(microchipOfPetToPlay);
-			// System.out.println("Thanks for the excursion!");
-			// } else {
-			// System.out.println(
-			// "Oops! " + microchipOfPetToPlay + " cannot be found! Pick something else to
-			// do at The Lair!");
-			// }
-			// break;
+			case "5":
+				lairApp.showAllNumbsNamesAndTypes();
+				System.out.println("Please enter a creature chip number to take one on a mini-journey: ");
+				String microchipOfPetToPlay = input.nextLine();
+				if (lairApp.microchipNumber.contains(microchipOfPetToPlay)) {
+					lairApp.playWithPet(microchipOfPetToPlay);
+					System.out.println("Thanks for the excursion!");
+				} else {
+					System.out.println("Oops! " + microchipOfPetToPlay
+							+ "cannot be found! Pick something else to do at The Lair!");
+				}
+
+				break;
 			case "6":
 				lairApp.cleanAllDogCages();
 				break;
 			case "7":
 				lairApp.litterBoxEmpty();
+				break;
+			case "8":
+				lairApp.oilAllRobots();
 				break;
 			// case "7":
 			// lairApp.
@@ -95,9 +100,6 @@ public class VirtualpetShelterApp {
 			// castleland for our creature to call home!s");
 			// }
 			// break;
-			case "8":
-				lairApp.oilAllRobots();
-				break;
 			// case "9":
 			// break;
 			case "10":

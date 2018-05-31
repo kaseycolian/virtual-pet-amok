@@ -166,15 +166,16 @@ public class VirtualPetShelter {
 		System.out.println("The Lair litter box level: " + litterBoxLevel);
 		System.out.println();
 		for (Creatures petToDisplay : animals.values()) {
-			if (petToDisplay instanceof OrganicDragon) {
-				System.out.println(petToDisplay.toString());
-			}
-			if (petToDisplay instanceof OrganicPhoenix) {
-				System.out.println(petToDisplay.toString());
-			}
-			if (petToDisplay instanceof RoboDragon) {
-				System.out.println(petToDisplay.toString());
-			}
+//			if (petToDisplay instanceof OrganicDragon) {
+//				System.out.println(petToDisplay.toString());
+//			}
+//			if (petToDisplay instanceof OrganicPhoenix) {
+//				System.out.println(petToDisplay.toString());
+//			}
+//			if (petToDisplay instanceof RoboDragon) {
+//				System.out.println(petToDisplay.toString());
+//			}
+			System.out.println(petToDisplay.toString());
 		}
 	}
 }
